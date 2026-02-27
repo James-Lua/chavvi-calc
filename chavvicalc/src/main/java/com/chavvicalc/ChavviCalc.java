@@ -3,10 +3,12 @@ package com.chavvicalc;
 import java.util.Scanner;
 
 /*
- * chavvi calc calculator
+ * chavvi calculator
  */
 public class ChavviCalc {
 
+  private static float valueA = 0.0f;
+  private static float valueB = 0.0f;
   public static void main(String[] args) {
     Scanner scan = new Scanner(System.in);
     Character command = '_';
@@ -40,6 +42,8 @@ public class ChavviCalc {
   public static void printMenu() {
     printMenuLine();
     System.out.println("ChavviCalc");
+    printMenuLine();
+    System.out.printf("A = %.3g\t\tB = %.3g\n", valueA, valueB);
     printMenuLine();
 
     printMenuCommand('q', "Quit");
