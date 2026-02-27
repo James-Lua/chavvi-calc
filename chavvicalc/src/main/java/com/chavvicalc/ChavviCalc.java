@@ -52,6 +52,7 @@ public class ChavviCalc {
     printMenuCommand('-', "Subtract");
     printMenuCommand('*', "Multiply");
     printMenuCommand('/', "Divide");
+    printMenuCommand('c', "Clear");
     printMenuCommand('q', "Quit");
 
     printMenuLine();
@@ -116,7 +117,17 @@ public class ChavviCalc {
         break;
 
       case '/':
+        if (valueB == 0.0f) {
+          System.out.println("ERROR: Cannot divide by zero.");
+          success = false;
+        } else {
         valueA = valueA / valueB;
+        }
+        break;
+
+      case 'c':
+        valueA = 0.0f;
+        valueB = 0.0f;
         break;
 
       case 'q':
