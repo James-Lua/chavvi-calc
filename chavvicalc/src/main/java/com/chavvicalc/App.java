@@ -1,8 +1,7 @@
 package com.chavvicalc;
 
-/**
+/*
  * Hello world!
- *
  */
 public class App 
 {
