@@ -43,7 +43,7 @@ public class ChavviCalc {
     printMenuLine();
     System.out.println("ChavviCalc");
     printMenuLine();
-    System.out.printf("A = %.3g\t\tB = %.3g\n", valueA, valueB);
+    System.out.printf("A = %.3f\t\tB = %.3f\n", valueA, valueB);
     printMenuLine();
 
     printMenuCommand('a', "Enter a value for A");
@@ -67,21 +67,42 @@ public class ChavviCalc {
     return command;
   }
 
+  // enter a float value
+  private static boolean readFloat(Scanner scan, char variable) {
+    System.out.printf("Enter a value for %c: ", variable);
+    String input = scan.nextLine().trim();
+
+    try {
+      float val = Float.parseFloat(input);
+      if (variable == 'a' || variable == 'A') {
+        valueA = val;
+      } else {
+        valueB = val;
+      }
+      return true;
+    } catch (NumberFormatException e) {
+      System.out.println("ERROR: \"" + input + "\" is not a valid number. Please enter a numeric value.");
+      return false;
+    }
+  }
+
   // calculator functions
   private static Boolean executeCommand(Scanner scan, Character command) {
     Boolean success = true;
 
     switch (command) {
       case 'a':
-        //input
+        readFloat(scan, 'A');
         break;
 
       case 'b':
-        //input
+        readFloat(scan, 'B');
         break;
+
       case 'q':
         System.out.println("Thank you for using Chavvi Calc");
         break;
+
       default:
         System.out.println("ERROR: Unknown commmand");
         success = false;
