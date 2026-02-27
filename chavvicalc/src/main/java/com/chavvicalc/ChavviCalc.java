@@ -46,6 +46,8 @@ public class ChavviCalc {
     System.out.printf("A = %.3g\t\tB = %.3g\n", valueA, valueB);
     printMenuLine();
 
+    printMenuCommand('a', "Enter a value for A");
+    printMenuCommand('b', "Enter a value for B");
     printMenuCommand('q', "Quit");
 
     printMenuLine();
@@ -70,6 +72,13 @@ public class ChavviCalc {
     Boolean success = true;
 
     switch (command) {
+      case 'a':
+        //input
+        break;
+
+      case 'b':
+        //input
+        break;
       case 'q':
         System.out.println("Thank you for using Chavvi Calc");
         break;
