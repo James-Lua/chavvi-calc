@@ -73,21 +73,19 @@ public class ChavviCalc {
   }
 
   // enter a float value
-  private static boolean readFloat(Scanner scan, char variable) {
+  private static void readFloat(Scanner scan, char variable) {
     System.out.printf("Enter a value for %c: ", variable);
     String input = scan.nextLine().trim();
 
     try {
       float val = Float.parseFloat(input);
-      if (variable == 'a' || variable == 'A') {
+      if (variable == 'A') {
         valueA = val;
       } else {
         valueB = val;
       }
-      return true;
     } catch (NumberFormatException e) {
-      System.out.println("ERROR: \"" + input + "\" is not a valid number. Please enter a numeric value.");
-      return false;
+        System.out.println("ERROR: \"" + input + "\" is not a valid number. Please enter a numeric value.");
     }
   }
 
@@ -97,40 +95,32 @@ public class ChavviCalc {
       case 'a':
         readFloat(scan, 'A');
         break;
-
       case 'b':
         readFloat(scan, 'B');
         break;
-
       case '+':
         valueA = valueA + valueB;
         break;
-
       case '-':
         valueA = valueA - valueB;
         break;
-
       case '*':
         valueA = valueA * valueB;
         break;
-
       case '/':
         if (valueB == 0.0f) {
           System.out.println("ERROR: Cannot divide by zero.");
         } else {
-        valueA = valueA / valueB;
+          valueA = valueA / valueB;
         }
         break;
-
       case 'c':
         valueA = 0.0f;
         valueB = 0.0f;
         break;
-
       case 'q':
         System.out.println("Thank you for using Chavvi Calc");
         break;
-
       default:
         System.out.println("ERROR: Unknown commmand");
     }
