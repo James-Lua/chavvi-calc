@@ -92,9 +92,7 @@ public class ChavviCalc {
   }
 
   // calculator functions
-  private static Boolean executeCommand(Scanner scan, Character command) {
-    Boolean success = true;
-
+  private static void executeCommand(Scanner scan, Character command) {
     switch (command) {
       case 'a':
         readFloat(scan, 'A');
@@ -119,7 +117,6 @@ public class ChavviCalc {
       case '/':
         if (valueB == 0.0f) {
           System.out.println("ERROR: Cannot divide by zero.");
-          success = false;
         } else {
         valueA = valueA / valueB;
         }
@@ -136,9 +133,6 @@ public class ChavviCalc {
 
       default:
         System.out.println("ERROR: Unknown commmand");
-        success = false;
     }
-
-    return success;
   }
 }
