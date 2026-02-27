@@ -48,6 +48,8 @@ public class ChavviCalc {
 
     printMenuCommand('a', "Enter a value for A");
     printMenuCommand('b', "Enter a value for B");
+    printMenuCommand('+', "Add");
+    printMenuCommand('-', "Subtract");
     printMenuCommand('q', "Quit");
 
     printMenuLine();
@@ -97,6 +99,14 @@ public class ChavviCalc {
 
       case 'b':
         readFloat(scan, 'B');
+        break;
+
+      case '+':
+        valueA = valueA + valueB;
+        break;
+
+      case '-':
+        valueA = valueA - valueB;
         break;
 
       case 'q':
