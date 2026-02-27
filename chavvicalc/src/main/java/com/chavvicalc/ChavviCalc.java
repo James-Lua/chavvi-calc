@@ -50,6 +50,8 @@ public class ChavviCalc {
     printMenuCommand('b', "Enter a value for B");
     printMenuCommand('+', "Add");
     printMenuCommand('-', "Subtract");
+    printMenuCommand('*', "Multiply");
+    printMenuCommand('/', "Divide");
     printMenuCommand('q', "Quit");
 
     printMenuLine();
@@ -107,6 +109,14 @@ public class ChavviCalc {
 
       case '-':
         valueA = valueA - valueB;
+        break;
+
+      case '*':
+        valueA = valueA * valueB;
+        break;
+
+      case '/':
+        valueA = valueA / valueB;
         break;
 
       case 'q':
