@@ -122,7 +122,7 @@ public class ChavviCalc {
         System.out.println("Thank you for using Chavvi Calc");
         break;
       default:
-        System.out.println("ERROR: Unknown command");
+        System.out.println("ERROR: Unknown commmand");
     }
   }
 }
